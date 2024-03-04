@@ -1,4 +1,4 @@
-module github.com/govinda-attal/raft-server
+module github.com/ashermp9/raft-server
 
 go 1.21rc2
 
@@ -7,7 +7,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.47.0
 	github.com/ilyakaznacheev/cleanenv v1.4.2
 	github.com/madflojo/tasks v1.1.0
-	github.com/urfave/cli/v2 v2.25.7
+	github.com/urfave/cli/v2 v2.27.1
 	github.com/valyala/fasthttp v1.47.0
 	golang.org/x/exp v0.0.0-20230713183714-613f0c0eb8a1
 )

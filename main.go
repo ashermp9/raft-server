@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/govinda-attal/raft-server/server"
+	"github.com/ashermp9/raft-server/server"
 	"github.com/ilyakaznacheev/cleanenv"
 	"github.com/urfave/cli/v2"
 	"golang.org/x/exp/slog"
@@ -64,7 +64,7 @@ func runServer(ctx context.Context, cfg server.Config) error {
 			slog.Error("server stopped", "error", err)
 		}
 	}()
-	log.Print("Server Started")
+	slog.Info("Server Started")
 
 	<-done
 
@@ -74,9 +74,10 @@ func runServer(ctx context.Context, cfg server.Config) error {
 	}()
 
 	if err := srv.Shutdown(ctx); err != nil {
-		log.Fatalf("Server shutdown failed:%+v", err)
+		slog.Error("Server shutdown failed:%+v", err)
+		os.Exit(1)
 	}
-	log.Print("Server shutdown gracefully")
+	slog.Info("Server shutdown gracefully")
 	return nil
 }
 
